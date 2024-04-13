@@ -5,8 +5,8 @@ body {
     height: 100vh;
     margin: 0;
     background-image: url('bg_img.jpg'); 
-    background-size: cover; /* Ensure the background image covers the entire viewport */
-    background-position: center; /* Center the background image */
+    background-size: cover;
+    background-position: center; 
 }
 
 
@@ -17,10 +17,10 @@ body {
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    display: flex; /* Use flexbox */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center items vertically */
-    align-items: center; /* Center items horizontally */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
     text-align: center;
 }
 
@@ -39,7 +39,7 @@ body {
     font-size: 24px;
     font-family: sans-serif;
     font-weight: bold;
-    margin:  10px 0; /* Adjust margin */
+    margin:  10px 0; 
     color: #070707;
 }
 
