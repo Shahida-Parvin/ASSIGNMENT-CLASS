@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Calculator</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form id="calculatorForm">
+        <div class="form-group">
+          <label for="num1">Enter Number 1:</label>
+          <input type="text" class="form-control" id="num1" placeholder="Enter number">
+        </div>
+        <div class="form-group">
+          <label for="num2">Enter Number 2:</label>
+          <input type="text" class="form-control" id="num2" placeholder="Enter number">
+        </div>
+        <div class="form-group">
+          <label for="operation">Select Operation:</label>
+          <select class="form-control" id="operation">
+            <option value="+">Addition (+)</option>
+            <option value="-">Subtraction (-)</option>
+            <option value="*">Multiplication (*)</option>
+            <option value="/">Division (/)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Calculate</button>
+      </form>
+      <div id="result" class="mt-3"></div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+
+  function calculate() {
+
+    let num1 = parseFloat(document.getElementById('num1').value);
+    let num2 = parseFloat(document.getElementById('num2').value);
+    let operation = document.getElementById('operation').value;
+    let resultContainer = document.getElementById('result');
+
+    if (isNaN(num1) || isNaN(num2)) {
+      resultContainer.innerHTML = 'Please enter valid numbers.';
+      return;
+    }
+
+
+    let result;
+    switch (operation) {
+      case '+':
+        result = num1 + num2;
+        break;
+      case '-':
+        result = num1 - num2;
+        break;
+      case '*':
+        result = num1 * num2;
+        break;
+      case '/':
+        if (num2 === 0) {
+          resultContainer.innerHTML = 'Cannot divide by zero.';
+          return;
+        }
+        result = num1 / num2;
+        break;
+      default:
+        resultContainer.innerHTML = 'Invalid operation selected.';
+        return;
+    }
+
+
+    resultContainer.innerHTML = 'Result: ' + result;
+  }
+
+
+  document.getElementById('calculatorForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    calculate();
+  });
+</script>
+
+</body>
+</html>

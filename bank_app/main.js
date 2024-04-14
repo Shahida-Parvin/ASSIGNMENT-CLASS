@@ -49,6 +49,11 @@ const account1 = new BankAccount("John Doe", 500);
 const account2 = new BankAccount("Jane Smith", 1000);
 
 
+account1.deposit(200);
+account1.withdraw(100);
 account1.displayAccountInfo();
+
+account2.deposit(500);
+account2.withdraw(1500); 
 account2.displayAccountInfo();
 
